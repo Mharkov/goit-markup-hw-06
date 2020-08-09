@@ -132,7 +132,7 @@ body{
     display: block;
     width: 100%;
     height: 4px;
-    background: #2196F3;
+    background: var(--accent-color);
     border-radius: 2px;
     bottom: 0;
 }
@@ -537,7 +537,7 @@ fill: currentColor;
 .team-list-item-profession-link:hover,
 .team-list-item-profession-link:focus{
    
-    background-color: #2196F3;
+    background-color: var(--accent-color);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
@@ -586,13 +586,13 @@ fill: currentColor;
 
 .clients-list-item:hover{
 
-    border-color: #2196F3;
+    border-color: var(--accent-color);
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list-item:hover .clients-icon{
 
-     fill: #2196F3;
+     fill: var(--accent-color);
      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
      
 }
@@ -736,6 +736,7 @@ fill: currentColor;
     font-size: 14px;
     line-height: 1.143;
     text-transform: uppercase;
+    margin-bottom: 20px;
 
     color: var(--primary-white-color);
 
@@ -744,11 +745,11 @@ fill: currentColor;
 /* Footer кнопки */
 
 .mailing-list{
-    
     margin-left: 94px;
 }
 
 .mailing-btn{
+    position: relative;
 display: flex;
 align-items: baseline;
 
@@ -787,7 +788,6 @@ align-items: baseline;
     height: 50px; 
 
     border: none;
-    margin-top: 20px;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.25px;
@@ -798,7 +798,29 @@ align-items: baseline;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     background: #2F303A;
+    color: #ffffff;
+    padding-left: 16px;
+}
+
+.footer-label{
+
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+
+    font-size: 16px;
+    line-height: 1.25;
     color: rgba(255, 255, 255, 0.6);
+    ;
+}
+
+.mailing-list-input:focus + .footer-label,
+.mailing-list-input:not(:placeholder-shown) + .footer-label{
+   color: white;
+   opacity: 0;
+
+
 }
     /* Страница портфолио */
 
@@ -959,7 +981,7 @@ background-color:rgba(33, 150, 243, 0.9);
   position: fixed;
   
   width: 100%;
-height: 100%;
+  height: 100%;
   left: 0;
   top: 0;
   background: rgba(0, 0, 0, 0.2)
@@ -1022,14 +1044,14 @@ height: 100%;
   .commint:focus + .label-textarea,
   .form-input:not(:placeholder-shown) + .form-label,
   .commint:not(:placeholder-shown) + .label-textarea{
-   color:#2196F3 ;
+   color:var(--accent-color) ;
    transform: translate( -28px, -40px);
       
   }
 
   .commint:focus + .label-textarea,
   .commint:not(:placeholder-shown) + .label-textarea{
-   color:#2196F3 ;
+   color:var(--accent-color) ;
    transform: translateY( -35px);
   }
 
@@ -1038,7 +1060,7 @@ height: 100%;
   .form-input:not(:placeholder-shown),
   .commint:not(:placeholder-shown){
     outline: none;
-    border-color:#2196F3;
+    border-color:var(--accent-color);
   }
   
   .button{
@@ -1074,39 +1096,39 @@ height: 100%;
   }
   
   .form-input:focus ~ .form-icon{
-     fill: #2196F3;
+     fill: var(--accent-color);
   
   }
   
   .form-title{
   
-   padding-bottom: 30px;
-   padding-top: 40px;
+    padding-bottom: 30px;
+    padding-top: 40px;
     font-weight: 700;
     font-size: 20px;
-line-height: 1.15px;
-text-align: center;
+    line-height: 1.15px;
+    text-align: center;
   }
   
   
   .icon-btn{
-  display: flex;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #FFFFFF;
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
   
   }
   
   .icon-btn:hover{
-    fill:  #2196F3;
+    fill:  var(--accent-color);
     cursor: pointer;
   }
   
@@ -1120,36 +1142,58 @@ text-align: center;
    line-height: 1.714;
   
   }
-  .icon2{
+  .modal-text{
+   
+    font-size: 14px;
+    line-height: 1.714;
+    color: #757575;
+    margin-left: 8.38px;
+     
+  }
+
+  .modal-text a{
+   color: var(--accent-color);
+
+  } 
+
+  .modal-checkbox{
     width: 16px;
     height: 15px;
-    margin-left: 12px;
-    display: inline-block;
-    border: 2px solid var(--text-main-color);
+    border: 2px solid #757575;
     border-radius: 2px;
-      margin-left: 12px;
-    margin-right: 7px;
-    border-radius: 4px;
-    border: 2px;
-    border-color: black;
+   margin-left: 12px;
     
   }
   
-  .checkbox:checked + .icon2{
-  background-color: #2196F3;
+  .checkbox:checked + .modal-checkbox{
+    border-color:  var(--accent-color) ;
+    background-color: var(--accent-color);
+    background-image: url(../images/iconcheck.svg);
+    background-size: contain;
+    background-origin: border-box;
   
   }
   .checkbox{
     
-    appearance: none;
+    /* appearance: none;
+    position: absolute; */
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
     
   }
   .commint{
     
     width: 448px;
-  height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
   
   }
 
